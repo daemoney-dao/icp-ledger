@@ -4,12 +4,24 @@ set -e
 # Set default identities and flags
 MINTER_IDENTITY="icp-minter"
 
-if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+usage() {
   echo "Mints local ICP to the ledger account of the current identity, or to a specified account-id."
   echo ""
-  echo "Usage: $0 <ICP amount> [override_account_id]"
+  echo "Usage: $0 <ICP amount> [account-id]"
   echo ""
   echo "Requires the account 'minter' to be configured as the ICP ledger minter."
+}
+
+# Check if --help is provided in any argument and display usage if so.
+for arg in "$@"; do
+  if [ "$arg" = "--help" ]; then
+    usage
+    exit 0
+  fi
+done
+
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+  usage
   exit 1
 fi
 
