@@ -23,7 +23,7 @@ To install the latest versions of the ICP ledger and index canisters to the loca
 
 This script will:
 1. Download the latest versions of the ICP ledger and index canisters
-2. Modify dfx.json (from a template) to reference the icp-minter and default account ids
+2. Modify dfx.json (from a template) to reference the icp-minter account id
 3. Create, build and deploy the ICP ledger and index canisters to the local replica
 
 ### Minting ICP
