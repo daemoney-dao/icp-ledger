@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set default identities and flags
-minter_identity="minter"
-default_identity="daemoney-local"
+minter_identity="icp-minter"
+default_identity=$(dfx identity whoami)
 force_download=false
 
 usage() {

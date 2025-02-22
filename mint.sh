@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Set default identities and flags
+MINTER_IDENTITY="icp-minter"
+
 if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
   echo "Mints local ICP to the ledger account of the current identity, or to a specified account-id."
   echo ""
@@ -26,7 +29,7 @@ else
 fi
 
 # Switch to the minter identity.
-dfx identity use minter
+dfx identity use $MINTER_IDENTITY
 echo "Switched to minter identity."
 
 # Execute the transfer command from minter to the destination account.
