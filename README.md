@@ -18,14 +18,14 @@ dfx start --clean
 To install the latest versions of the ICP ledger and index canisters to the local replica run:
 
 ```
-./install.sh
+./install.sh --downnload
 ```
 
 This script will:
 1. Download the latest versions of the ICP ledger and index canisters
 2. Modify dfx.json (from a template) to reference the icp-minter and default account ids
 3. Create, build and deploy the ICP ledger and index canisters to the local replica
- 
+
 This will also mint 100 ICP and transfer it to the currently used identity.
 
 ### Minting ICP
