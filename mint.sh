@@ -2,7 +2,11 @@
 set -e
 
 if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+  echo "Mints local ICP to the ledger account of the current identity, or to a specified account-id."
+  echo ""
   echo "Usage: $0 <ICP amount> [override_account_id]"
+  echo ""
+  echo "Requires the account 'minter' to be configured as the ICP ledger minter."
   exit 1
 fi
 
