@@ -25,4 +25,7 @@ dist/
 .env
 
 # downloaded wasm / did
-./icp-ledger-wasm/*
+icp-ledger-wasm/*
+
+# dfx.json backup
+dfx.json.bak
