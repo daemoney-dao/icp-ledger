@@ -1,5 +1,15 @@
 {
   "canisters": {
+    "icp_index_canister": {
+      "type": "custom",
+      "candid": "./icp-ledger-wasm/index.did",
+      "wasm": "./icp-ledger-wasm/index.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "qhbym-qaaaa-aaaaa-aaafq-cai"
+        }
+      }
+    },
     "icp_ledger_canister": {
       "type": "custom",
       "candid": "https://raw.githubusercontent.com/dfinity/ic/aba60ffbc46acfc8990bf4d5685c1360bd7026b9/rs/ledger_suite/icp/ledger.did",

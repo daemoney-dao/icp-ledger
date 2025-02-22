@@ -1,0 +1,33 @@
+{
+  "canisters": {
+    "icp_index_canister": {
+      "type": "custom",
+      "candid": "./icp-ledger-wasm/index.did",
+      "wasm": "./icp-ledger-wasm/index.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "qhbym-qaaaa-aaaaa-aaafq-cai"
+        }
+      }
+    },
+    "icp_ledger_canister": {
+      "type": "custom",
+      "candid": "./icp-ledger-wasm/icp_ledger.did",
+      "wasm": "./icp-ledger-wasm/icp_ledger.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+        }
+      },
+      "init_arg" : "(variant { Init = record { minting_account = \"MINTER_ACCOUNT_ID\"}})"; 
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
