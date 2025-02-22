@@ -28,4 +28,4 @@ dist/
 icp-ledger-wasm/*
 
 # dfx.json backup
-dfx.json.bak
+/dfx.json.bak
