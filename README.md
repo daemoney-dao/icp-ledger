@@ -18,7 +18,7 @@ dfx start --clean
 To install the latest versions of the ICP ledger and index canisters to the local replica run:
 
 ```
-./install.sh --downnload
+./install.sh --download
 ```
 
 This script will:
