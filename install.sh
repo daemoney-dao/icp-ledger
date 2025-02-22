@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Set default identities and flags
+current_identity=$(dfx identity whoami)
 minter_identity="icp-minter"
 force_download=false
 
@@ -117,7 +118,7 @@ if [ "$force_download" = true ] || \
   
   cd ..
 else
-    echo "Skipping download: ./icp-ledger-wasm is not empty and --download was not provided."
+    echo "Skipping download."
 fi
 
 # Function to strip trailing newline (if any)
@@ -125,10 +126,9 @@ trim_newline() {
   echo -n "$1"
 }
 
-# Switch to the specified minter identity and obtain its account ID
-echo "Switching to '$minter_identity' identity..."
-dfx identity use "$minter_identity"
-minter_raw=$(dfx ledger account-id)
+# Obtain the icp-minter identity's account ID
+
+minter_raw=$(dfx ledger account-id --identity $minter_identity)
 minter_account=$(trim_newline "$minter_raw")
 echo "Minter account ID: ${minter_account}"
 
@@ -152,5 +152,3 @@ dfx deploy --specified-id ryjl3-tyaaa-aaaaa-aaaba-cai icp_ledger_canister
 # Create, build and deploy the ICP index canister
 echo "Deploying the ICP index canister..."
 dfx deploy icp_index_canister --specified-id qhbym-qaaaa-aaaaa-aaafq-cai --argument '(record {ledger_id = principal "ryjl3-tyaaa-aaaaa-aaaba-cai"})'
-
-
