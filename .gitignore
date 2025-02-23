@@ -27,5 +27,6 @@ dist/
 # downloaded wasm / did
 icp-ledger-wasm/*
 
-# dfx.json backup
+# dfx.json and backup
+/dfx.json
 /dfx.json.bak
