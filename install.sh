@@ -51,9 +51,13 @@ if [ "$force_download" = true ] || \
    [ ! -f "./icp-ledger-wasm/icp_ledger.wasm.gz" ] || \
    [ ! -f "./icp-ledger-wasm/index.did" ] || \
    [ ! -f "./icp-ledger-wasm/index.wasm.gz" ]; then
-    echo "Missing one or more required artifact files or forced download. Downloading the latest ICP ledger and index artifacts..."
+  echo "Missing one or more required artifact files or forced download. Downloading the latest ICP ledger and index artifacts..."
     
-    
+  # Create the icp-ledger-wasm directory if it does not exist
+  if [ ! -d "./icp-ledger-wasm" ]; then
+    echo "Directory icp-ledger-wasm does not exist, creating it..."
+    mkdir -p ./icp-ledger-wasm
+  fi    
     
   echo "Downloading the latest ICP ledger and index artifacts..."
   cd ./icp-ledger-wasm || { echo "Directory icp-ledger-wasm not found"; exit 1; }
