@@ -145,6 +145,9 @@ fi
 
 echo "dfx.json has been updated with the new account IDs."
 
+echo "Creating IDL factories..."
+dfx generate
+
 # Create, build and deploy the ICP ledger canister
 echo "Deploying the ICP ledger canister..."
 dfx deploy --specified-id ryjl3-tyaaa-aaaaa-aaaba-cai icp_ledger_canister
